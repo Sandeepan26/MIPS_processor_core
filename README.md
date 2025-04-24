@@ -1,17 +1,20 @@
 # MIPS_processor_core
 This repository is code base related to the design of a MIPS (Microprocessor without Interlocked Pipeline Stages) Core
 
-Features of the core:
+## Features of the core:
 1. 5- stage pipeline: Instruction Fetch, Instrution Decode, Execute, Memory, Write-Back.
 2. Direct Mapped Cache with 4KiB size mapping to a Single-port RAM of size 4M x 32.
 3.  Datapapath to enable support R-type (Register-Register), I-type(Integer-Immediate), J-type (Jump and Link), and B-type (Branch).
 4.  Hazard Control Unit for handling data and control hazards via Forwarding, Stalling, and Flushing.
 5.  Coprocessor for exception handling (undefined instruction  and arithmetic overflow).
 
-Languages Used: System Verilog (IEEE 1800-2017) |
+## Languages Used
+```
+System Verilog (IEEE 1800-2017) |
 Methodology for Verification: Universal Verification Methodology (IEEE 1800.2-2020)
+```
 
-Data Path:
+## Data Path
 
 Instruction is read from a file "machine.dat" and is accessed by the Program Counter at every positive edge of the clock. The instructions are then fed to the pipeline register IF_ID. IF_ID is also connected with hazard control unit which enables "stall" and "flush" signals for stalling and flushing the pipeline. The next stage is decode where The controller decodes the instruction and enables the datapath for the operation of the MIPS hart (core). Register file access the indexes for writing and reading data to and from the registers. The stage aslo has a sign-immediate unit to convert an immediate value for arithmetic operation to 32-bits in length for being used as an operand in the arithmetic and logic unit.
 
