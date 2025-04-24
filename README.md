@@ -10,8 +10,11 @@ This repository is code base related to the design of a MIPS (Microprocessor wit
 
 ## Languages Used
 ```
-System Verilog (IEEE 1800-2017) |
-Methodology for Verification: Universal Verification Methodology (IEEE 1800.2-2020)
+System Verilog (IEEE 1800-2017)
+```
+## Methodology for Verification
+```
+Universal Verification Methodology (IEEE 1800.2-2020)
 ```
 
 ## Data Path
